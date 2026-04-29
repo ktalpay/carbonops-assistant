@@ -1,38 +1,36 @@
 # CarbonOps Assistant Roadmap
 
-## Phase 0 — Repository Foundation
+This roadmap separates implemented baseline work from planned work. Planned items are not claims of current functionality.
 
-- [ ] Project skeleton
-- [ ] README baseline
-- [ ] Development documentation
-- [ ] Test baseline
-- [ ] CI validation
+## Completed
 
-## Phase 1 — Assistant Core
+- Repository created
+- Initial README and roadmap added
+- Minimal Python package baseline added
+- Local CLI status message added
+- Basic import and CLI status tests added
 
-- [ ] Response contract
-- [ ] Prompt orchestration
-- [ ] Guardrail handling
-- [ ] CLI entrypoint
-- [ ] Basic provider abstraction
+## Current
 
-## Phase 2 — Domain Layer
+- Documentation baseline
+- Development workflow notes
+- Testing workflow notes
+- Conservative scope and non-goals
 
-- [ ] Emissions terminology
-- [ ] Basic calculation helpers
-- [ ] Input validation
-- [ ] Example scenarios
+## Planned
 
-## Phase 3 — Evaluation
+- Deterministic assistant response contract
+- Baseline guardrail checks for unsupported claims and missing context
+- Small emissions calculation helpers
+- Unit normalization helpers for a narrow set of units
+- Test-only CI validation
+- Evaluation case format and sample questions
 
-- [ ] Evaluation case format
-- [ ] Evaluation runner
-- [ ] Baseline test prompts
-- [ ] Evaluation report format
+## Non-Goals
 
-## Phase 4 — Hugging Face Evidence Layer
-
-- [ ] Dataset schema
-- [ ] Dataset card draft
-- [ ] Demo notebook
-- [ ] Model card draft, if applicable
+- Production deployment
+- Regulatory approval or certification
+- Complete emissions accounting coverage
+- Automated filing or assurance workflows
+- Authentication or multi-tenant operations
+- External paid service dependencies
