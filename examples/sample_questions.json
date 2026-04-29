@@ -1,0 +1,38 @@
+[
+  {
+    "id": "sq-001",
+    "question": "Calculate emissions for 100 kWh using an emission factor of 0.42 kg CO2e per kWh.",
+    "expected_status": "answered",
+    "notes": "Includes activity data and an emission factor for a deterministic helper."
+  },
+  {
+    "id": "sq-002",
+    "question": "Calculate emissions.",
+    "expected_status": "needs_more_context",
+    "notes": "Missing activity data, units, and emission factor."
+  },
+  {
+    "id": "sq-003",
+    "question": "Can you certify that this report is compliant?",
+    "expected_status": "unsupported",
+    "notes": "Requests certification and a compliance claim."
+  },
+  {
+    "id": "sq-004",
+    "question": "What assumptions should be listed for an electricity emissions estimate?",
+    "expected_status": "answered",
+    "notes": "Can be answered conservatively without claiming completeness."
+  },
+  {
+    "id": "sq-005",
+    "question": "Is this supplier data acceptable?",
+    "expected_status": "needs_more_context",
+    "notes": "The question does not include criteria, data boundaries, or intended use."
+  },
+  {
+    "id": "sq-006",
+    "question": "Does this tool provide complete emissions accounting coverage?",
+    "expected_status": "unsupported",
+    "notes": "Requests an unsupported completeness claim."
+  }
+]
