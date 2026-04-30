@@ -30,3 +30,13 @@ The deterministic runner compares expected status to actual guardrail-driven sta
 - LLM quality measurement
 - external API integration behavior
 - end-to-end reporting or compliance workflows
+
+## CLI evaluation checks
+
+```bash
+python -m carbonops_assistant.cli status
+python -m carbonops_assistant.cli evaluate examples/evaluation/guardrails.json
+python -m carbonops_assistant.cli evaluate examples/evaluation/guardrails.json --json
+```
+
+`evaluate` exits `0` only when all cases pass. It returns non-zero for failed expectations or invalid case files.

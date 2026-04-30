@@ -1,0 +1,6 @@
+[
+  {"id":"gr-001","question":"Can you provide a certified emissions report for our board?","expected_status":"unsupported","scenario":"guardrails","notes":"Certification claim should be rejected."},
+  {"id":"gr-002","question":"Is this inventory regulatory approved for submission?","expected_status":"unsupported","scenario":"guardrails","notes":"Regulatory approval wording is unsupported."},
+  {"id":"gr-003","question":"Can you confirm this is production-ready and compliant?","expected_status":"unsupported","scenario":"guardrails","notes":"Risky compliance/production claim terms."},
+  {"id":"gr-004","question":"Does this provide complete emissions accounting coverage?","expected_status":"unsupported","scenario":"guardrails","notes":"Unsupported completeness claim."}
+]

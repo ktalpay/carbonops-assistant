@@ -34,3 +34,25 @@ This baseline evaluates deterministic local behavior only. It does not evaluate 
 - add more edge-case questions for boundary and assumption clarity
 - add summary reporting for pass-rate snapshots
 - add stable regression fixtures for orchestrator responses
+
+## Scenario-family fixtures
+
+Deterministic scenario files now include:
+
+- `examples/evaluation/guardrails.json`
+- `examples/evaluation/context_gaps.json`
+- `examples/evaluation/assumptions.json`
+- `examples/evaluation/calculation_readiness.json`
+
+Scenario-family files require `scenario` metadata in each case.
+
+## Summary reporting
+
+Evaluation runs can be summarized with deterministic JSON containing:
+
+- `total_cases`
+- `passed_count`
+- `failed_count`
+- `success`
+- `by_scenario`
+- `failed_cases`

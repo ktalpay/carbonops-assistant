@@ -12,6 +12,7 @@ class EvaluationResult:
     expected_status: str
     actual_status: str
     passed: bool
+    scenario: str = ""
     reason: str = ""
 
 
@@ -29,6 +30,7 @@ def run_cases(cases: tuple[EvaluationCase, ...] | list[EvaluationCase]) -> tuple
                 expected_status=case.expected_status,
                 actual_status=response.status,
                 passed=passed,
+                scenario=case.scenario,
                 reason=reason,
             )
         )

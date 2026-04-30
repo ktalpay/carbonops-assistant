@@ -1,0 +1,6 @@
+[
+  {"id":"cg-001","question":"Calculate emissions","expected_status":"needs_more_context","scenario":"context_gaps","notes":"No activity data or factors provided."},
+  {"id":"cg-002","question":"Estimate our carbon footprint","expected_status":"needs_more_context","scenario":"context_gaps","notes":"Vague calculation request."},
+  {"id":"cg-003","question":"Is this okay?","expected_status":"needs_more_context","scenario":"context_gaps","notes":"Ambiguous data-source and boundary intent."},
+  {"id":"cg-004","question":"Can you calculate this","expected_status":"needs_more_context","scenario":"context_gaps","notes":"Missing quantity, unit, and factor."}
+]

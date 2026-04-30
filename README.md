@@ -55,3 +55,15 @@ python -m pip install -e ".[test]"
 ```bash
 python -m pytest -q
 ```
+
+## Evaluation CLI
+
+Run deterministic evaluations locally:
+
+```bash
+python -m carbonops_assistant.cli evaluate examples/evaluation/guardrails.json
+python -m carbonops_assistant.cli evaluate examples/evaluation/guardrails.json --json
+```
+
+Scenario-family fixtures are available in `examples/evaluation/` for guardrails, context gaps, assumptions, and calculation readiness.
+JSON output is deterministic and includes totals, pass/fail counts, success, scenario aggregation, and compact failed-case details.

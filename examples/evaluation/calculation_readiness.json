@@ -1,0 +1,6 @@
+[
+  {"id":"cr-001","question":"Calculate emissions for 150 kWh using 0.4 kg CO2e per kWh.","expected_status":"answered","scenario":"calculation_readiness","notes":"Has activity amount, unit, and factor."},
+  {"id":"cr-002","question":"Estimate carbon for 2,000 passenger-km at 0.09 kg CO2e per passenger-km.","expected_status":"answered","scenario":"calculation_readiness","notes":"Sufficient unit context for deterministic workflow."},
+  {"id":"cr-003","question":"Calculate emissions from 500 liters diesel with factor 2.68 kg CO2e/liter.","expected_status":"answered","scenario":"calculation_readiness","notes":"Fuel activity and factor are both present."},
+  {"id":"cr-004","question":"Estimate emissions for 75 therms natural gas at 5.3 kg CO2e/therm.","expected_status":"answered","scenario":"calculation_readiness","notes":"Enough data for future deterministic calculations."}
+]
