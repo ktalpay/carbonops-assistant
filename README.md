@@ -42,6 +42,14 @@ This project does not currently provide:
 - automated regulatory filing
 - complete emissions accounting coverage
 
+
+## Evidence & Evaluation Docs
+
+- Technical evidence index: `docs/evidence/index.md`
+- Deterministic evaluation architecture: `docs/evaluation/architecture.md`
+- Evidence backlog: `docs/evidence-backlog.md`
+- Roadmap: `docs/roadmap.md`
+
 ## Local Setup
 
 Use Python 3.11 or newer.
