@@ -11,10 +11,10 @@
 
 ## Next focus
 
-- Expand sample evaluation cases with clearer expected reasoning notes
-- Improve orchestrator answer templates while keeping conservative behavior
-- Add tighter tests for limitations/sources formatting
-- Prepare evidence-oriented backlog and issue queue
+- Expand scenario-family evaluation cases with explicit deterministic expectations
+- Add tighter deterministic regression tests for response formatting and limits language
+- Improve local artifact navigation for reviewer-friendly run comparisons
+- Progress evidence-backlog items in small, test-backed increments
 
 ## Non-Goals
 
@@ -34,3 +34,10 @@
 
 - add markdown report export for run history comparisons
 - expand diffing beyond status transitions only when stable and justified
+
+## Evidence consolidation status (2026-04-30)
+
+- Technical evidence index is implemented at `docs/evidence/index.md`.
+- Deterministic evaluation architecture summary is implemented at `docs/evaluation/architecture.md`.
+- README navigation now links evidence and architecture docs for reviewer access.
+

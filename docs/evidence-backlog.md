@@ -51,6 +51,12 @@ This backlog tracks evidence-oriented work to improve deterministic quality and 
 - `COA: Add domain mini-case pack for local evidence`
 - `COA: Draft HF dataset/model-card readiness notes`
 
+## Completed in this run (2026-04-30)
+
+- Added `docs/evidence/index.md` to consolidate implemented technical evidence with conservative scope/limitations notes
+- Added `docs/evaluation/architecture.md` to document the deterministic evaluation flow and boundaries
+- Updated README and roadmap links for faster evidence navigation
+
 ## Recently completed (2026-04-30)
 
 - Scenario-family evaluation files for guardrails, context gaps, assumptions, and calculation readiness
