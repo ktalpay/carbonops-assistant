@@ -8,32 +8,25 @@ python -m pytest -q
 
 ## Current Coverage
 
-The current tests cover:
+Tests currently cover:
 
-- package imports
-- the conservative local CLI status message
+- package import baseline
+- local CLI status message
+- response contract behavior
+- deterministic guardrails
+- units and emissions helpers
+- evaluation case loading and deterministic runner behavior
+- knowledge-base document loading and keyword ranking
+- deterministic assistant orchestrator behavior
 
-As the project grows, tests should continue to favor deterministic behavior and small units.
+## Evaluation Baseline
 
-## Not Tested Yet
+Evaluation cases are loaded from JSON (for example `examples/sample_questions.json`) and validated against response statuses in the response contract.
 
-The project does not yet test:
+The deterministic runner compares expected status to actual guardrail-driven status and returns pass/fail per case.
 
-- assistant response contracts
-- guardrail behavior
-- emissions calculation helpers
-- evaluation datasets or benchmark scoring
-- integrations with external services
+## Out of Scope
 
-External service behavior is intentionally outside the current baseline.
-
-## Future Evaluation Tests
-
-Evaluation tests may be added later as structured cases with:
-
-- a stable question identifier
-- the user question
-- expected response status
-- expected limitation or unsupported-behavior notes
-
-These evaluation cases should remain conservative and should not require an LLM provider for the initial baseline.
+- LLM quality measurement
+- external API integration behavior
+- end-to-end reporting or compliance workflows

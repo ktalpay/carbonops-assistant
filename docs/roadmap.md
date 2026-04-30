@@ -1,36 +1,24 @@
 # CarbonOps Assistant Roadmap
 
-This roadmap separates implemented baseline work from planned work. Planned items are not claims of current functionality.
+## Implemented baseline
 
-## Completed
+- Python package and CLI baseline
+- Deterministic response contract and guardrails
+- Deterministic units/emissions helpers
+- Deterministic local evaluation runner
+- Deterministic local knowledge-base loading/search baseline
+- Deterministic orchestrator that combines guardrails and optional knowledge lookups
 
-- Repository created
-- Initial README and roadmap added
-- Minimal Python package baseline added
-- Local CLI status message added
-- Basic import and CLI status tests added
+## Next focus
 
-## Current
-
-- Documentation baseline
-- Development workflow notes
-- Testing workflow notes
-- Conservative scope and non-goals
-
-## Planned
-
-- Deterministic assistant response contract
-- Baseline guardrail checks for unsupported claims and missing context
-- Small emissions calculation helpers
-- Unit normalization helpers for a narrow set of units
-- Test-only CI validation
-- Evaluation case format and sample questions
+- Expand sample evaluation cases with clearer expected reasoning notes
+- Improve orchestrator answer templates while keeping conservative behavior
+- Add tighter tests for limitations/sources formatting
+- Prepare evidence-oriented backlog and issue queue
 
 ## Non-Goals
 
-- Production deployment
-- Regulatory approval or certification
+- Production deployment claims
+- Regulatory/certification claims
 - Complete emissions accounting coverage
-- Automated filing or assurance workflows
-- Authentication or multi-tenant operations
 - External paid service dependencies
