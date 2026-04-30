@@ -22,3 +22,14 @@
 - Regulatory/certification claims
 - Complete emissions accounting coverage
 - External paid service dependencies
+
+## Current evaluation status
+
+- Scenario-family deterministic evaluation fixtures are implemented.
+- Deterministic summary reporting with scenario-level aggregation is implemented.
+- Local CLI evaluation command and JSON summary output are implemented.
+
+## Next-phase candidates
+
+- add markdown report export for run history comparisons
+- add deterministic diff tooling for changed case outcomes

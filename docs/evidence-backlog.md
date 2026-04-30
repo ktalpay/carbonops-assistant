@@ -50,3 +50,15 @@ This backlog tracks evidence-oriented work to improve deterministic quality and 
 - `COA: Add knowledge-base conservative content checklist`
 - `COA: Add domain mini-case pack for local evidence`
 - `COA: Draft HF dataset/model-card readiness notes`
+
+## Recently completed (2026-04-30)
+
+- Scenario-family evaluation files for guardrails, context gaps, assumptions, and calculation readiness
+- Deterministic evaluation summary object with stable JSON output
+- Local CLI `evaluate` command with pass/fail exit codes
+
+## Remaining limitations
+
+- No LLM/model quality measurement
+- No regulatory/compliance/certification claims
+- No complete emissions accounting coverage

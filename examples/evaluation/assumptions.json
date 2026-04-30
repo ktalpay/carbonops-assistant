@@ -1,0 +1,6 @@
+[
+  {"id":"as-001","question":"What assumptions should we state for electricity emissions estimates?","expected_status":"answered","scenario":"assumptions","notes":"Should be answered with conservative framing."},
+  {"id":"as-002","question":"List key limitations for an office energy estimate with unknown meter boundaries.","expected_status":"answered","scenario":"assumptions","notes":"Requests assumption/limitation guidance."},
+  {"id":"as-003","question":"What boundary assumptions are typical for a first-pass Scope 2 estimate?","expected_status":"answered","scenario":"assumptions","notes":"Boundary assumptions question."},
+  {"id":"as-004","question":"Which assumptions should be documented when factor source quality is unclear?","expected_status":"answered","scenario":"assumptions","notes":"Factor quality assumption guidance."}
+]
