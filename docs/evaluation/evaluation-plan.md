@@ -1,43 +1,36 @@
 # Evaluation Plan
 
-## Why Evaluation Matters
+## Current baseline
 
-CarbonOps Assistant is intended to handle carbon and emissions questions conservatively. Evaluation cases help keep behavior consistent as local response contracts, guardrails, and domain helpers evolve.
+The repository now includes a deterministic evaluation runner that:
 
-The current project is pre-alpha and does not run an LLM evaluation pipeline.
+- loads JSON case files
+- validates required fields (`id`, `question`, `expected_status`)
+- validates `expected_status` against the response contract
+- executes questions through deterministic guardrails
+- returns pass/fail records with expected and actual statuses
 
-## Planned Case Format
+## Case format
 
-Evaluation cases may use JSON objects with fields such as:
+Evaluation case objects use:
 
 - `id`
 - `question`
 - `expected_status`
-- `notes`
+- `notes` (optional)
 
-Expected statuses should align with the local response contract:
+Allowed statuses:
 
 - `answered`
 - `unsupported`
 - `needs_more_context`
 
-## Unsupported-Question Behavior
+## Scope limits
 
-Questions requesting certification, regulatory approval, assurance, or unsupported completeness claims should be classified as `unsupported`.
+This baseline evaluates deterministic local behavior only. It does not evaluate LLM outputs, regulatory readiness, or complete emissions accounting behavior.
 
-Questions without enough activity data, emission factor context, or boundary information should be classified as `needs_more_context`.
+## Next evaluation improvements
 
-## Future Benchmark Direction
-
-Future evaluation work may add:
-
-- deterministic guardrail test cases
-- emissions-helper calculation cases
-- structured assistant-response snapshots
-- small benchmark reports for local development
-
-Any future benchmark should clearly state its dataset, assumptions, and limitations.
-
-## Current Limitations
-
-The current evaluation plan is a placeholder. It does not measure model quality, factual accuracy against external datasets, reporting readiness, or end-to-end emissions accounting coverage.
+- add more edge-case questions for boundary and assumption clarity
+- add summary reporting for pass-rate snapshots
+- add stable regression fixtures for orchestrator responses
