@@ -34,3 +34,35 @@ def test_evaluate_failure_returns_non_zero(tmp_path, capsys):
     code = cli.main(["evaluate", str(path)])
     _ = capsys.readouterr().out
     assert code != 0
+
+
+def test_compare_evaluations_text_and_json(tmp_path, capsys):
+    previous = tmp_path / "previous.json"
+    current = tmp_path / "current.json"
+    previous.write_text(json.dumps({
+        "total_cases": 2,
+        "passed_count": 1,
+        "failed_count": 1,
+        "success": False,
+        "by_scenario": {},
+        "failed_cases": [{"case_id": "c1"}],
+    }), encoding="utf-8")
+    current.write_text(json.dumps({
+        "total_cases": 2,
+        "passed_count": 0,
+        "failed_count": 2,
+        "success": False,
+        "by_scenario": {},
+        "failed_cases": [{"case_id": "c1"}, {"case_id": "c2"}],
+    }), encoding="utf-8")
+
+    code = cli.main(["compare-evaluations", str(previous), str(current)])
+    out = capsys.readouterr().out
+    assert code == 0
+    assert "newly_failing=['c2']" in out
+
+    code = cli.main(["compare-evaluations", str(previous), str(current), "--json"])
+    out = capsys.readouterr().out.strip()
+    assert code == 0
+    parsed = json.loads(out)
+    assert parsed["newly_failing_case_ids"] == ["c2"]
