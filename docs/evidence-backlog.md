@@ -10,10 +10,10 @@ This backlog tracks evidence-oriented work to improve deterministic quality and 
    - Risk: Medium  
    - Notes: add grouped cases for missing units, ambiguous factors, and unsupported certification phrasing.
 
-2. **Add evaluation summary artifact format**  
-   - GTV relevance: supports transparent run-to-run comparisons  
-   - Risk: Low  
-   - Notes: create a deterministic JSON/Markdown summary including pass counts and changed cases.
+2. **Expand evaluation diff reporting surface carefully**  
+   - GTV relevance: supports transparent run-to-run comparisons while preserving deterministic behavior  
+   - Risk: Medium  
+   - Notes: evaluate whether additional stable fields beyond status/case-id transitions are needed.
 
 3. **Tighten orchestrator response regression tests**  
    - GTV relevance: demonstrates stable behavior boundaries  
@@ -55,6 +55,8 @@ This backlog tracks evidence-oriented work to improve deterministic quality and 
 
 - Scenario-family evaluation files for guardrails, context gaps, assumptions, and calculation readiness
 - Deterministic evaluation summary object with stable JSON output
+- Snapshot save/load helpers for deterministic evaluation report artifacts
+- Deterministic evaluation diff module and CLI `compare-evaluations` command
 - Local CLI `evaluate` command with pass/fail exit codes
 
 ## Remaining limitations

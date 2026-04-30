@@ -28,8 +28,9 @@
 - Scenario-family deterministic evaluation fixtures are implemented.
 - Deterministic summary reporting with scenario-level aggregation is implemented.
 - Local CLI evaluation command and JSON summary output are implemented.
+- Deterministic snapshot save/load helpers and snapshot diff tooling are implemented.
 
 ## Next-phase candidates
 
 - add markdown report export for run history comparisons
-- add deterministic diff tooling for changed case outcomes
+- expand diffing beyond status transitions only when stable and justified

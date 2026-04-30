@@ -40,3 +40,5 @@ python -m carbonops_assistant.cli evaluate examples/evaluation/guardrails.json -
 ```
 
 `evaluate` exits `0` only when all cases pass. It returns non-zero for failed expectations or invalid case files.
+
+`compare-evaluations` compares two deterministic evaluation snapshots and exits `0` for valid input. Use `--json` for compact deterministic diff output suitable for regression checks.

@@ -56,3 +56,19 @@ Evaluation runs can be summarized with deterministic JSON containing:
 - `success`
 - `by_scenario`
 - `failed_cases`
+
+
+## Snapshot and diff workflow
+
+Evaluation summary payloads can be saved and loaded as deterministic JSON snapshots for run-to-run comparisons.
+
+Diff comparisons currently track:
+
+- previous/current totals
+- previous/current passed and failed counts
+- newly failing case IDs
+- newly passing case IDs
+- unchanged failing case IDs
+- success-changed boolean
+
+Current diff behavior is intentionally narrow and deterministic; it does not compare free-form answer text and does not claim model-quality measurement.
