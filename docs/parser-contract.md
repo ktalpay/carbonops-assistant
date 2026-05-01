@@ -183,6 +183,10 @@ unsupportedReasons: [regulatory_or_certification_request]
 
 The parser extracts `factorUnit`. Unit normalization attempts to map it to `normalizedUnit`. Unsupported units should not be guessed. Normalization limits should be exposed through warnings.
 
+## Relationship with source metadata
+
+Parser inputs may include source metadata fields. Parser outputs may carry source references and metadata warnings. Source metadata provides review context, but it does not prove factor correctness or replace parser validation.
+
 ## Public safety notes
 
 - Do not claim certified accuracy.
