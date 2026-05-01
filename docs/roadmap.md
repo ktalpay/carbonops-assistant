@@ -5,6 +5,7 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 ## Implemented baseline
 
 - Python package and CLI baseline
+- v0.1.0 release candidate documentation prepared
 - Deterministic response contract and guardrails
 - Response statuses: `answered`, `unsupported`, `needs_more_context`
 - Deterministic emissions calculation helpers
@@ -28,6 +29,7 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 - Source metadata extraction and validation
 - Expanded unit normalization
 - Parser fixture examples
+- Structured parser object
 - Structured input/output examples
 - Evaluation summary output
 - Reporting result implementation and rendering

@@ -4,7 +4,7 @@ CarbonOps Assistant is a pre-alpha local development project for building a smal
 
 ## Status
 
-Pre-alpha. Not production-ready.
+Pre-alpha. v0.1.0 release candidate documentation and deterministic baseline. Not a production implementation.
 
 ## Implemented Baseline
 
@@ -22,8 +22,9 @@ Pre-alpha. Not production-ready.
 - Parser input contract documentation in `docs/parser-contract.md`
 - Source metadata model documentation in `docs/source-metadata-model.md`
 - Reporting result contract documentation in `docs/reporting-result-contract.md`
+- v0.1.0 release notes in `docs/release-notes/v0.1.0.md`
 - Unit tests for the implemented baseline
-- Test-only GitHub Actions workflow
+- Test-only continuous integration workflow
 
 ## Current Limitations
 
@@ -81,7 +82,7 @@ Tests do not require provider credentials or external service access.
 ```text
 src/carbonops_assistant/   Python package source
 tests/                     Unit tests
-docs/                      Development, testing, roadmap, examples, parser/source/reporting contracts, and evaluation notes
+docs/                      Development, testing, roadmap, release notes, examples, parser/source/reporting contracts, and evaluation notes
 examples/                  Small public fixtures, including sample question examples
 .github/workflows/         Test-only continuous integration
 ```
