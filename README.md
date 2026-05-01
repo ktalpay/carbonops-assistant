@@ -4,7 +4,7 @@ CarbonOps Assistant is a pre-alpha local development project for building a smal
 
 ## Status
 
-Pre-alpha. v0.1.0 release candidate documentation and deterministic baseline. Not a production implementation.
+Pre-alpha. v0.2.0 release candidate: minimal deterministic local demo baseline. Not a production implementation.
 
 ## Implemented Baseline
 
@@ -21,6 +21,9 @@ Pre-alpha. v0.1.0 release candidate documentation and deterministic baseline. No
 - Deterministic assistant orchestrator that combines guardrails with optional local knowledge sections
 - Deterministic local demo command for evaluating a question without external services
 - Minimal text factor parser for narrow public-safe snippets
+- Parser result JSON-friendly serialization
+- Minimal reporting result model and Markdown summary renderer
+- Evaluation summary output for sample questions
 - Parser input contract documentation in `docs/parser-contract.md`
 - Source metadata model documentation in `docs/source-metadata-model.md`
 - Reporting result contract documentation in `docs/reporting-result-contract.md`
@@ -42,6 +45,10 @@ Pre-alpha. v0.1.0 release candidate documentation and deterministic baseline. No
 - Not carbon accounting certification
 - Not suitable as the sole basis for reporting or submissions
 - Outputs require human review
+
+## Quickstart
+
+See `docs/quickstart.md` for install, local demo, parser demo, and example status summary commands.
 
 ## Planned
 
