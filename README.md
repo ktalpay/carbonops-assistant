@@ -20,6 +20,7 @@ Pre-alpha. Not production-ready.
 - Deterministic assistant orchestrator that combines guardrails with optional local knowledge sections
 - Parser input contract documentation in `docs/parser-contract.md`
 - Source metadata model documentation in `docs/source-metadata-model.md`
+- Reporting result contract documentation in `docs/reporting-result-contract.md`
 - Unit tests for the implemented baseline
 - Test-only GitHub Actions workflow
 
@@ -41,7 +42,7 @@ Pre-alpha. Not production-ready.
 
 - emission factor parsing experiments
 - source metadata extraction and validation
-- reporting result contract
+- reporting result implementation
 - expanded unit normalization
 - public examples
 
@@ -79,7 +80,7 @@ Tests do not require provider credentials or external service access.
 ```text
 src/carbonops_assistant/   Python package source
 tests/                     Unit tests
-docs/                      Development, testing, roadmap, parser/source metadata contracts, and evaluation notes
+docs/                      Development, testing, roadmap, parser/source/reporting contracts, and evaluation notes
 examples/                  Small public fixtures
 .github/workflows/         Test-only continuous integration
 ```

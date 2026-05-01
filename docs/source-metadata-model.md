@@ -96,6 +96,8 @@ Conflicts between source metadata and extracted text should be surfaced as warni
 
 Future reporting outputs may include source metadata references. Reporting outputs should separate calculated values from source notes. Source metadata should not imply legal or regulatory acceptance.
 
+Reporting results may include source references and metadata warnings. Source metadata improves traceability, but it does not imply regulatory acceptance or correctness.
+
 ## Example metadata records
 
 ### Complete metadata

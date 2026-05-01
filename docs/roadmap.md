@@ -13,6 +13,7 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 - Sample question schema validation
 - Parser input contract documentation
 - Source metadata model documentation
+- Reporting result contract documentation
 - Unit test baseline
 - Test-only continuous integration
 - Deterministic local evaluation case loader and status-check runner
@@ -21,7 +22,6 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 
 ## Next focus
 
-- Reporting result contract
 - Clearer public examples for supported and unsupported questions
 
 ## Later increments
@@ -31,7 +31,7 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 - Source metadata extraction and validation
 - Expanded unit normalization
 - Evaluation summary output
-- Reporting result rendering
+- Reporting result implementation and rendering
 
 ## Non-goals
 
