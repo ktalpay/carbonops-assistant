@@ -121,6 +121,25 @@ Sample output:
 
 The parser demo supports only narrow simple text snippets. Parser outputs are candidates requiring validation and human review.
 
+### Example Status Summary
+
+Run the sample question status checks:
+
+```bash
+python -m carbonops_assistant.cli run-examples
+```
+
+Sample output:
+
+```json
+{
+  "failed": 0,
+  "failures": [],
+  "passed": 12,
+  "total_cases": 12
+}
+```
+
 ### Markdown Summary Example
 
 Reporting results can be rendered as concise Markdown summaries for local review output. The summary includes status, visible warnings, assumptions, review status, and the note: `This is a local deterministic summary and requires human review.`

@@ -72,3 +72,20 @@ def test_parse_factor_command_returns_unsupported_for_no_numeric_input(capsys) -
 
     assert output["parser_status"] == "unsupported"
     assert output["unsupported_reasons"] == ["no_numeric_factor"]
+
+
+def test_run_examples_command_returns_summary(capsys) -> None:
+    output = run_cli(capsys, "run-examples")
+
+    assert output["total_cases"] == 12
+    assert output["passed"] == 12
+    assert output["failed"] == 0
+    assert output["failures"] == []
+
+
+def test_run_examples_command_requires_no_external_service_configuration(capsys, monkeypatch) -> None:
+    monkeypatch.delenv("CARBONOPS_PROVIDER_KEY", raising=False)
+
+    output = run_cli(capsys, "run-examples")
+
+    assert output["failed"] == 0

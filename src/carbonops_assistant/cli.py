@@ -8,6 +8,8 @@ from carbonops_assistant.assistant.orchestrator import answer_question
 from carbonops_assistant.assistant.response_contract import AssistantResponse
 from carbonops_assistant.config import PROJECT_NAME, PROJECT_SCOPE, PROJECT_STATUS
 from carbonops_assistant.domain.parser import parse_emission_factor_text
+from carbonops_assistant.evaluation.cases import load_cases
+from carbonops_assistant.evaluation.runner import run_cases, summarize_results
 
 
 def status_message() -> str:
@@ -39,6 +41,12 @@ def format_parser_result(raw_text: str) -> str:
     return json.dumps(result.to_dict(), indent=2, sort_keys=True)
 
 
+def format_examples_summary(path: str = "examples/sample_questions.json") -> str:
+    cases = load_cases(path)
+    results = run_cases(cases)
+    return json.dumps(summarize_results(results).to_dict(), indent=2, sort_keys=True)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="carbonops-assistant",
@@ -57,6 +65,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Parse a narrow local emission factor text snippet.",
     )
     parse_factor_parser.add_argument("raw_text", help="Text snippet to parse locally.")
+
+    subparsers.add_parser(
+        "run-examples",
+        help="Run deterministic sample question status checks.",
+    )
     return parser
 
 
@@ -77,6 +90,10 @@ def main(argv: Sequence[str] | None = None) -> None:
 
     if args.command == "parse-factor":
         print(format_parser_result(args.raw_text))
+        return
+
+    if args.command == "run-examples":
+        print(format_examples_summary())
         return
 
     print(status_message())

@@ -25,6 +25,7 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 - Minimal text factor parser for narrow public-safe snippets
 - Local parser demo command
 - Minimal reporting result model
+- Evaluation summary output
 
 ## Later increments
 
@@ -35,7 +36,6 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 - Parser fixture examples
 - Structured parser object
 - Structured input/output examples
-- Evaluation summary output
 - Reporting result fixtures and rendering
 
 ## Non-goals
