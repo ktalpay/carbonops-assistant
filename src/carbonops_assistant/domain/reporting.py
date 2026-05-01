@@ -58,3 +58,72 @@ class ReportingResult:
             "assumptions": list(self.assumptions),
             "review_status": self.review_status,
         }
+
+
+def _format_list(values: tuple[str, ...]) -> str:
+    if not values:
+        return "- none"
+    return "\n".join(f"- {value}" for value in values)
+
+
+def render_reporting_result_markdown(result: ReportingResult) -> str:
+    lines = [
+        "# Reporting Result Summary",
+        "",
+        f"- Result status: {result.result_status}",
+        f"- Review status: {result.review_status}",
+    ]
+
+    if result.calculated_emissions_value is not None and result.calculated_emissions_unit:
+        lines.append(
+            f"- Calculated emissions: {result.calculated_emissions_value} {result.calculated_emissions_unit}"
+        )
+
+    if result.activity_label or result.activity_amount is not None or result.activity_unit:
+        activity_parts = []
+        if result.activity_label:
+            activity_parts.append(result.activity_label)
+        if result.activity_amount is not None:
+            activity_parts.append(str(result.activity_amount))
+        if result.activity_unit:
+            activity_parts.append(result.activity_unit)
+        lines.append(f"- Activity: {' '.join(activity_parts)}")
+
+    if result.emission_factor_value is not None or result.emission_factor_unit:
+        factor_parts = []
+        if result.emission_factor_value is not None:
+            factor_parts.append(str(result.emission_factor_value))
+        if result.emission_factor_unit:
+            factor_parts.append(result.emission_factor_unit)
+        lines.append(f"- Emission factor: {' '.join(factor_parts)}")
+
+    lines.extend(
+        [
+            "",
+            "## Warnings",
+            "",
+            _format_list(result.warnings),
+            "",
+            "## Assumptions",
+            "",
+            _format_list(result.assumptions),
+        ]
+    )
+
+    if result.unsupported_reasons:
+        lines.extend(
+            [
+                "",
+                "## Unsupported Reasons",
+                "",
+                _format_list(result.unsupported_reasons),
+            ]
+        )
+
+    lines.extend(
+        [
+            "",
+            "This is a local deterministic summary and requires human review.",
+        ]
+    )
+    return "\n".join(lines)

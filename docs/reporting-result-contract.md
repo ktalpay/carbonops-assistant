@@ -54,7 +54,7 @@ The current implementation includes a minimal `ReportingResult` dataclass with r
 
 The model can serialize to a JSON-friendly dictionary. Decimal values are represented as strings, and warning, unsupported reason, and assumption fields are represented as lists.
 
-This is a structural result model only. It does not render production reports, create filings, validate source credibility, or replace human review.
+The implementation also includes a minimal Markdown summary renderer for local review output. This is a structural result model only. It does not render production reports, create filings, validate source credibility, or replace human review.
 
 ## Reporting result fields
 
@@ -196,7 +196,6 @@ Future increments may add:
 
 - example fixtures
 - CSV or table reporting examples
-- simple Markdown summary rendering
 - validation summary output
 
-Current code implements only the minimal structural model described above.
+Current code implements only the minimal structural model and local Markdown summary described above.

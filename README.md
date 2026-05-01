@@ -121,6 +121,10 @@ Sample output:
 
 The parser demo supports only narrow simple text snippets. Parser outputs are candidates requiring validation and human review.
 
+### Markdown Summary Example
+
+Reporting results can be rendered as concise Markdown summaries for local review output. The summary includes status, visible warnings, assumptions, review status, and the note: `This is a local deterministic summary and requires human review.`
+
 ## Running Tests
 
 ```bash
