@@ -20,6 +20,7 @@ Pre-alpha. v0.1.0 release candidate documentation and deterministic baseline. No
 - Local Markdown knowledge section loading and keyword search baseline
 - Deterministic assistant orchestrator that combines guardrails with optional local knowledge sections
 - Deterministic local demo command for evaluating a question without external services
+- Minimal text factor parser for narrow public-safe snippets
 - Parser input contract documentation in `docs/parser-contract.md`
 - Source metadata model documentation in `docs/source-metadata-model.md`
 - Reporting result contract documentation in `docs/reporting-result-contract.md`
@@ -29,8 +30,9 @@ Pre-alpha. v0.1.0 release candidate documentation and deterministic baseline. No
 
 ## Current Limitations
 
-- No emission factor parser
+- Parser supports only narrow simple text snippets
 - No CSV or table parsing
+- No PDF, OCR, or web extraction
 - No source metadata extraction from external references
 - No model/provider integration
 - No broad evaluation scoring workflow
@@ -43,7 +45,7 @@ Pre-alpha. v0.1.0 release candidate documentation and deterministic baseline. No
 
 ## Planned
 
-- emission factor parsing experiments
+- expanded emission factor parsing experiments
 - source metadata extraction and validation
 - reporting result implementation
 - expanded unit normalization
@@ -90,7 +92,7 @@ Sample output:
 }
 ```
 
-The demo command is a local baseline only. It does not implement a parser, call an external model/provider, retrieve external data, or produce production reporting. Outputs require human review.
+The demo command is a local baseline only. It does not run the parser, call an external model/provider, retrieve external data, or produce production reporting. Outputs require human review.
 
 ## Running Tests
 

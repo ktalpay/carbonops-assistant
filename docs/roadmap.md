@@ -22,10 +22,11 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 - Deterministic local knowledge-base loading/search baseline
 - Deterministic orchestrator that combines guardrails and optional knowledge lookups
 - Deterministic local demo command
+- Minimal text factor parser for narrow public-safe snippets
 
 ## Later increments
 
-- Emission factor parsing
+- Expanded emission factor parsing
 - CSV and table parsing
 - Source metadata extraction and validation
 - Expanded unit normalization
