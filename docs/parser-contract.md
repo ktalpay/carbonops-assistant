@@ -187,6 +187,10 @@ The parser extracts `factorUnit`. Unit normalization attempts to map it to `norm
 
 Parser inputs may include source metadata fields. Parser outputs may carry source references and metadata warnings. Source metadata provides review context, but it does not prove factor correctness or replace parser validation.
 
+## Relationship with reporting result contract
+
+Parser outputs may later feed reporting results. Parsed candidates require validation before use in reporting results, and parser warnings and assumptions should carry forward into reporting warnings and assumptions.
+
 ## Public safety notes
 
 - Do not claim certified accuracy.
