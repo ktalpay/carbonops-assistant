@@ -48,6 +48,14 @@ Out of scope:
 
 `calculated` means arithmetic was performed, not that the result is certified or final. `review_required` means the output is structurally available but should not be used without human review. `unsupported` means the system should not produce a calculated result.
 
+## Implemented model baseline
+
+The current implementation includes a minimal `ReportingResult` dataclass with result status, input references, calculation fields, warnings, unsupported reasons, assumptions, and review status.
+
+The model can serialize to a JSON-friendly dictionary. Decimal values are represented as strings, and warning, unsupported reason, and assumption fields are represented as lists.
+
+This is a structural result model only. It does not render production reports, create filings, validate source credibility, or replace human review.
+
 ## Reporting result fields
 
 The future reporting result object is conceptual and uses these fields.
@@ -186,11 +194,9 @@ Reporting output may include source references. Source metadata improves traceab
 
 Future increments may add:
 
-- typed reporting result object
-- reporting result tests
 - example fixtures
 - CSV or table reporting examples
 - simple Markdown summary rendering
 - validation summary output
 
-No code is added by this document.
+Current code implements only the minimal structural model described above.
