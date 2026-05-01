@@ -1,3 +1,4 @@
+import json
 from decimal import Decimal
 
 from carbonops_assistant.domain.parser import parse_emission_factor_text
@@ -76,3 +77,44 @@ def test_parser_does_not_require_external_calls(monkeypatch) -> None:
 
     assert result.parser_status == "parsed"
     assert result.normalized_unit == "kgCO2e/m3"
+
+
+def test_parsed_result_serializes_to_json_friendly_dict() -> None:
+    result = parse_emission_factor_text("diesel-serialized", "Diesel factor: 2.68 kgCO2e/litre")
+
+    serialized = result.to_dict()
+
+    assert serialized == {
+        "input_id": "diesel-serialized",
+        "parser_status": "parsed",
+        "factor_value": "2.68",
+        "factor_unit": "kgCO2e/litre",
+        "normalized_unit": "kgCO2e/litre",
+        "confidence_level": "medium",
+        "warnings": [],
+        "unsupported_reasons": [],
+        "extracted_text": "2.68 kgCO2e/litre",
+        "assumptions": [],
+    }
+    json.dumps(serialized)
+
+
+def test_context_limited_result_serializes_warning_list() -> None:
+    result = parse_emission_factor_text("missing-unit-serialized", "Factor: 2.68")
+
+    serialized = result.to_dict()
+
+    assert serialized["warnings"] == ["missing_unit"]
+    assert serialized["unsupported_reasons"] == []
+    json.dumps(serialized)
+
+
+def test_unsupported_result_serializes_cleanly() -> None:
+    result = parse_emission_factor_text("empty-serialized", "")
+
+    serialized = result.to_dict()
+
+    assert serialized["factor_value"] is None
+    assert serialized["warnings"] == []
+    assert serialized["unsupported_reasons"] == ["empty_input"]
+    json.dumps(serialized)

@@ -101,6 +101,14 @@ The future parser output is a conceptual object with these fields.
 
 High confidence does not mean regulatory correctness. `parsed` means structurally extracted, not certified. `unsupported` means no safe structured candidate can be produced.
 
+## Serialization format
+
+`ParserResult` can be represented as a JSON-friendly dictionary for local display and later workflow handoff. The helper uses Python field names such as `parser_status`, `factor_value`, and `unsupported_reasons`.
+
+Decimal factor values are serialized as strings to avoid precision loss. Warning and unsupported reason fields are serialized as lists. `None` values remain `None`.
+
+Serialization does not imply correctness or certification. Serialized parser output remains a candidate that requires validation and human review.
+
 ## Validation expectations
 
 - Numeric values must be parseable.

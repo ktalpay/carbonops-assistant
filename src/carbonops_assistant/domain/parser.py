@@ -33,6 +33,20 @@ class ParserResult:
         object.__setattr__(self, "unsupported_reasons", tuple(self.unsupported_reasons))
         object.__setattr__(self, "assumptions", tuple(self.assumptions))
 
+    def to_dict(self) -> dict[str, object]:
+        return {
+            "input_id": self.input_id,
+            "parser_status": self.parser_status,
+            "factor_value": str(self.factor_value) if self.factor_value is not None else None,
+            "factor_unit": self.factor_unit,
+            "normalized_unit": self.normalized_unit,
+            "confidence_level": self.confidence_level,
+            "warnings": list(self.warnings),
+            "unsupported_reasons": list(self.unsupported_reasons),
+            "extracted_text": self.extracted_text,
+            "assumptions": list(self.assumptions),
+        }
+
 
 _SUPPORTED_UNIT_PATTERNS: tuple[tuple[str, str], ...] = (
     (r"kg\s*co2e\s*/\s*litre\b", "kgCO2e/litre"),
