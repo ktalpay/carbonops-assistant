@@ -18,6 +18,7 @@ Tests currently cover:
 - response contract behavior
 - deterministic guardrails
 - units and emissions helpers
+- minimal text factor parser
 - sample question fixture schema
 - evaluation case loading and deterministic runner behavior
 - knowledge-base document loading and keyword ranking
@@ -41,7 +42,7 @@ The deterministic runner compares expected status to actual guardrail-driven sta
 
 ## Current Gaps
 
-- no parser tests yet
+- no expanded parser coverage yet
 - no CSV or table parsing tests yet
 - no source metadata extraction tests yet
 - no external model/provider tests

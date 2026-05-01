@@ -30,6 +30,19 @@ Out of scope:
 - web crawling
 - production reporting
 
+## Implemented parser baseline
+
+The current implementation supports only simple text snippets with one numeric factor and a small supported unit set:
+
+- `kgCO2e/litre`
+- `kgCO2e/l`
+- `kg CO2e per litre`
+- `kgCO2e/kWh`
+- `kg CO2e per kWh`
+- `kgCO2e/m3`
+
+Parser output is a candidate that requires validation and human review. CSV parsing, table parsing, PDF extraction, OCR extraction, web crawling, and external lookup are not implemented.
+
 ## Input contract
 
 The future parser input is a conceptual object with these fields.
@@ -203,10 +216,9 @@ Parser outputs may later feed reporting results. Parsed candidates require valid
 
 Future increments may add:
 
-- dataclass or typed object
 - parser tests
 - CSV fixture parsing
 - source metadata validation
 - reporting result contract
 
-No code is added by this document.
+Current code implements only the minimal text snippet baseline described above.
