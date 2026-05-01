@@ -15,6 +15,7 @@ Pre-alpha. Not production-ready.
 - Basic unit normalization helpers for a narrow set of energy and emissions units
 - Sample question fixture in `examples/sample_questions.json`
 - Sample question schema validation
+- Public question examples in `docs/examples.md`
 - Local evaluation case loading and deterministic status checks
 - Local Markdown knowledge section loading and keyword search baseline
 - Deterministic assistant orchestrator that combines guardrails with optional local knowledge sections
@@ -44,7 +45,7 @@ Pre-alpha. Not production-ready.
 - source metadata extraction and validation
 - reporting result implementation
 - expanded unit normalization
-- public examples
+- parser fixture examples
 
 ## Non-Goals
 
@@ -80,8 +81,8 @@ Tests do not require provider credentials or external service access.
 ```text
 src/carbonops_assistant/   Python package source
 tests/                     Unit tests
-docs/                      Development, testing, roadmap, parser/source/reporting contracts, and evaluation notes
-examples/                  Small public fixtures
+docs/                      Development, testing, roadmap, examples, parser/source/reporting contracts, and evaluation notes
+examples/                  Small public fixtures, including sample question examples
 .github/workflows/         Test-only continuous integration
 ```
 

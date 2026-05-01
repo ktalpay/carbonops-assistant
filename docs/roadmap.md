@@ -11,6 +11,7 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 - Basic unit normalization helpers
 - Sample question fixture
 - Sample question schema validation
+- Public examples for supported, unsupported, and context-limited questions
 - Parser input contract documentation
 - Source metadata model documentation
 - Reporting result contract documentation
@@ -20,16 +21,14 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 - Deterministic local knowledge-base loading/search baseline
 - Deterministic orchestrator that combines guardrails and optional knowledge lookups
 
-## Next focus
-
-- Clearer public examples for supported and unsupported questions
-
 ## Later increments
 
 - Emission factor parsing
 - CSV and table parsing
 - Source metadata extraction and validation
 - Expanded unit normalization
+- Parser fixture examples
+- Structured input/output examples
 - Evaluation summary output
 - Reporting result implementation and rendering
 
