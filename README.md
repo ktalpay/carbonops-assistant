@@ -6,29 +6,43 @@ CarbonOps Assistant is a pre-alpha local development project for building a smal
 
 Pre-alpha. Not production-ready.
 
-## Implemented
+## Implemented Baseline
 
 - Python package baseline under `src/carbonops_assistant`
 - Deterministic response contract with allowed statuses (`answered`, `unsupported`, `needs_more_context`)
-- Deterministic guardrails for empty input, risky claim language, and missing context
-- Deterministic domain helpers for units and emissions calculations
-- Local evaluation case loader and deterministic evaluation runner
-- Local Markdown knowledge-base section loader and keyword search baseline
+- Guardrail checks for empty input, unsupported or risky wording patterns, and missing context
+- Emissions calculation helpers for `activity amount * emission factor`
+- Basic unit normalization helpers for a narrow set of energy and emissions units
+- Sample question fixture in `examples/sample_questions.json`
+- Local evaluation case loading and deterministic status checks
+- Local Markdown knowledge section loading and keyword search baseline
 - Deterministic assistant orchestrator that combines guardrails with optional local knowledge sections
+- Unit tests for the implemented baseline
+- Test-only GitHub Actions workflow
 
 ## Current Limitations
 
-- No LLM calls
-- No external APIs or external data retrieval
+- No emission factor parser
+- No CSV or table parsing
+- No source metadata extraction from external references
+- No model/provider integration
+- No broad evaluation scoring workflow
+- No production reporting pipeline
+- No external API calls or external data retrieval
 - No deployment, authentication, or multi-tenant support
-- Not suitable for regulatory approval, certification, or assurance decisions
-- Not complete emissions accounting coverage
+- Not carbon accounting certification
+- Not suitable as the sole basis for reporting or submissions
+- Outputs require human review
 
 ## Planned
 
-- richer evaluation datasets and scoring checks
-- improved deterministic assistant answer shaping
-- incremental domain examples and evidence-oriented artifacts
+- parser input contract
+- sample question schema validation in tests
+- emission factor parsing experiments
+- source metadata model
+- reporting result contract
+- expanded unit normalization
+- public examples
 
 ## Non-Goals
 
@@ -39,6 +53,7 @@ This project does not currently provide:
 - legal or financial advice
 - automated regulatory filing
 - complete emissions accounting coverage
+- reporting correctness guarantees
 
 ## Local Setup
 
@@ -53,5 +68,21 @@ python -m pip install -e ".[test]"
 ## Running Tests
 
 ```bash
-python -m pytest -q
+PYTHONDONTWRITEBYTECODE=1 python -m pytest -q
 ```
+
+Tests do not require provider credentials or external service access.
+
+## Repository Structure
+
+```text
+src/carbonops_assistant/   Python package source
+tests/                     Unit tests
+docs/                      Development, testing, roadmap, and evaluation notes
+examples/                  Small public fixtures
+.github/workflows/         Test-only continuous integration
+```
+
+## Disclaimer
+
+CarbonOps Assistant is experimental software for local development. It is not legal advice, not carbon accounting certification, and not suitable as the sole basis for reporting or regulatory submissions. Outputs should be reviewed by qualified humans before use.
