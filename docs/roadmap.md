@@ -21,6 +21,7 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 - Deterministic local evaluation case loader and status-check runner
 - Deterministic local knowledge-base loading/search baseline
 - Deterministic orchestrator that combines guardrails and optional knowledge lookups
+- Deterministic local demo command
 
 ## Later increments
 

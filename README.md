@@ -19,6 +19,7 @@ Pre-alpha. v0.1.0 release candidate documentation and deterministic baseline. No
 - Local evaluation case loading and deterministic status checks
 - Local Markdown knowledge section loading and keyword search baseline
 - Deterministic assistant orchestrator that combines guardrails with optional local knowledge sections
+- Deterministic local demo command for evaluating a question without external services
 - Parser input contract documentation in `docs/parser-contract.md`
 - Source metadata model documentation in `docs/source-metadata-model.md`
 - Reporting result contract documentation in `docs/reporting-result-contract.md`
@@ -68,6 +69,28 @@ python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e ".[test]"
 ```
+
+## Local Demo
+
+Run a deterministic local question through the current baseline:
+
+```bash
+python -m carbonops_assistant.cli ask "Calculate emissions for 100 litres with factor 2.68 kgCO2e/litre."
+```
+
+Sample output:
+
+```json
+{
+  "limitations": [
+    "This is a deterministic baseline without LLM generation or external data calls."
+  ],
+  "message": "The question appears in-scope, but no local knowledge base was provided for grounded details.",
+  "status": "answered"
+}
+```
+
+The demo command is a local baseline only. It does not implement a parser, call an external model/provider, retrieve external data, or produce production reporting. Outputs require human review.
 
 ## Running Tests
 
