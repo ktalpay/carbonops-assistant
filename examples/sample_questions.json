@@ -1,9 +1,9 @@
 [
   {
     "id": "sq-001",
-    "question": "Calculate emissions for 100 kWh using an emission factor of 0.42 kg CO2e per kWh.",
+    "question": "Calculate emissions for 100 litres with factor 2.68 kgCO2e/litre.",
     "expected_status": "answered",
-    "notes": "Includes activity data and an emission factor for a deterministic helper."
+    "notes": "Includes activity data and an emission factor for a bounded deterministic calculation."
   },
   {
     "id": "sq-002",
@@ -15,24 +15,60 @@
     "id": "sq-003",
     "question": "Can you certify that this report is compliant?",
     "expected_status": "unsupported",
-    "notes": "Requests certification and a compliance claim."
+    "notes": "Requests assurance or official submission approval."
   },
   {
     "id": "sq-004",
-    "question": "What assumptions should be listed for an electricity emissions estimate?",
+    "question": "Normalize unit kg CO2e per litre.",
     "expected_status": "answered",
-    "notes": "Can be answered conservatively without claiming completeness."
+    "notes": "Requests narrow unit formatting without source or methodology claims."
   },
   {
     "id": "sq-005",
-    "question": "Is this supplier data acceptable?",
-    "expected_status": "needs_more_context",
-    "notes": "The question does not include criteria, data boundaries, or intended use."
+    "question": "What information is missing from this factor: 0.21 kgCO2e?",
+    "expected_status": "answered",
+    "notes": "Can identify missing context without producing a final report."
   },
   {
     "id": "sq-006",
-    "question": "Does this tool provide complete emissions accounting coverage?",
+    "question": "Summarize the limitations of using a parsed emission factor candidate.",
+    "expected_status": "answered",
+    "notes": "Can describe limitations conservatively from the documented baseline."
+  },
+  {
+    "id": "sq-007",
+    "question": "Calculate this fuel emission.",
+    "expected_status": "needs_more_context",
+    "notes": "Missing fuel type, activity amount, activity unit, emission factor, factor unit, source, and period."
+  },
+  {
+    "id": "sq-008",
+    "question": "Estimate emissions.",
+    "expected_status": "needs_more_context",
+    "notes": "Missing activity data, emission factor, unit basis, boundary, and intended use."
+  },
+  {
+    "id": "sq-009",
+    "question": "What are my emissions?",
+    "expected_status": "needs_more_context",
+    "notes": "Missing activity data, scope, boundary, source data, and calculation basis."
+  },
+  {
+    "id": "sq-010",
+    "question": "Can you make a final legal decision for this factor?",
     "expected_status": "unsupported",
-    "notes": "Requests an unsupported completeness claim."
+    "notes": "Requests legal certainty or formal assurance."
+  },
+  {
+    "id": "sq-011",
+    "question": "Can you approve this report for official use?",
+    "expected_status": "unsupported",
+    "notes": "Requests an approval decision outside the current project scope."
+  },
+  {
+    "id": "sq-012",
+    "question": "Can you decide my complete emissions inventory?",
+    "expected_status": "unsupported",
+    "notes": "Requests a complete inventory decision outside the current project scope."
   }
 ]
