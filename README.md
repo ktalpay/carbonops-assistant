@@ -14,9 +14,11 @@ Pre-alpha. Not production-ready.
 - Emissions calculation helpers for `activity amount * emission factor`
 - Basic unit normalization helpers for a narrow set of energy and emissions units
 - Sample question fixture in `examples/sample_questions.json`
+- Sample question schema validation
 - Local evaluation case loading and deterministic status checks
 - Local Markdown knowledge section loading and keyword search baseline
 - Deterministic assistant orchestrator that combines guardrails with optional local knowledge sections
+- Parser input contract documentation in `docs/parser-contract.md`
 - Unit tests for the implemented baseline
 - Test-only GitHub Actions workflow
 
@@ -36,8 +38,6 @@ Pre-alpha. Not production-ready.
 
 ## Planned
 
-- parser input contract
-- sample question schema validation in tests
 - emission factor parsing experiments
 - source metadata model
 - reporting result contract
@@ -78,7 +78,7 @@ Tests do not require provider credentials or external service access.
 ```text
 src/carbonops_assistant/   Python package source
 tests/                     Unit tests
-docs/                      Development, testing, roadmap, and evaluation notes
+docs/                      Development, testing, roadmap, parser contract, and evaluation notes
 examples/                  Small public fixtures
 .github/workflows/         Test-only continuous integration
 ```
