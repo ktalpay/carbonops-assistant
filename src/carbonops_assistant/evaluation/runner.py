@@ -15,6 +15,22 @@ class EvaluationResult:
     reason: str = ""
 
 
+@dataclass(frozen=True)
+class EvaluationSummary:
+    total_cases: int
+    passed: int
+    failed: int
+    failures: tuple[dict[str, str], ...]
+
+    def to_dict(self) -> dict[str, object]:
+        return {
+            "total_cases": self.total_cases,
+            "passed": self.passed,
+            "failed": self.failed,
+            "failures": list(self.failures),
+        }
+
+
 def run_cases(cases: tuple[EvaluationCase, ...] | list[EvaluationCase]) -> tuple[EvaluationResult, ...]:
     results: list[EvaluationResult] = []
     for case in cases:
@@ -33,3 +49,24 @@ def run_cases(cases: tuple[EvaluationCase, ...] | list[EvaluationCase]) -> tuple
             )
         )
     return tuple(results)
+
+
+def summarize_results(results: tuple[EvaluationResult, ...] | list[EvaluationResult]) -> EvaluationSummary:
+    failures = tuple(
+        {
+            "case_id": result.case_id,
+            "expected_status": result.expected_status,
+            "actual_status": result.actual_status,
+            "reason": result.reason,
+        }
+        for result in results
+        if not result.passed
+    )
+    passed = sum(1 for result in results if result.passed)
+    total_cases = len(results)
+    return EvaluationSummary(
+        total_cases=total_cases,
+        passed=passed,
+        failed=total_cases - passed,
+        failures=failures,
+    )

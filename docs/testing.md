@@ -8,6 +8,14 @@ PYTHONDONTWRITEBYTECODE=1 python -m pytest -q
 
 The current test suite is expected to pass locally from the repository root after installing test dependencies.
 
+## Example Summary Command
+
+```bash
+python -m carbonops_assistant.cli run-examples
+```
+
+The command loads `examples/sample_questions.json` and returns a JSON summary with `total_cases`, `passed`, `failed`, and `failures`.
+
 ## Current Coverage
 
 Tests currently cover:
@@ -15,12 +23,14 @@ Tests currently cover:
 - package import baseline
 - local CLI status message
 - local CLI demo command statuses
+- local parser demo command statuses
 - response contract behavior
 - deterministic guardrails
 - units and emissions helpers
 - minimal text factor parser
 - sample question fixture schema
 - evaluation case loading and deterministic runner behavior
+- evaluation summary output
 - knowledge-base document loading and keyword ranking
 - deterministic assistant orchestrator behavior
 

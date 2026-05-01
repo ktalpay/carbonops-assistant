@@ -4,7 +4,7 @@ CarbonOps Assistant is a pre-alpha local development project for building a smal
 
 ## Status
 
-Pre-alpha. v0.1.0 release candidate documentation and deterministic baseline. Not a production implementation.
+Pre-alpha. v0.2.0 release candidate: minimal deterministic local demo baseline. Not a production implementation.
 
 ## Implemented Baseline
 
@@ -21,6 +21,9 @@ Pre-alpha. v0.1.0 release candidate documentation and deterministic baseline. No
 - Deterministic assistant orchestrator that combines guardrails with optional local knowledge sections
 - Deterministic local demo command for evaluating a question without external services
 - Minimal text factor parser for narrow public-safe snippets
+- Parser result JSON-friendly serialization
+- Minimal reporting result model and Markdown summary renderer
+- Evaluation summary output for sample questions
 - Parser input contract documentation in `docs/parser-contract.md`
 - Source metadata model documentation in `docs/source-metadata-model.md`
 - Reporting result contract documentation in `docs/reporting-result-contract.md`
@@ -42,6 +45,10 @@ Pre-alpha. v0.1.0 release candidate documentation and deterministic baseline. No
 - Not carbon accounting certification
 - Not suitable as the sole basis for reporting or submissions
 - Outputs require human review
+
+## Quickstart
+
+See `docs/quickstart.md` for install, local demo, parser demo, and example status summary commands.
 
 ## Planned
 
@@ -93,6 +100,56 @@ Sample output:
 ```
 
 The demo command is a local baseline only. It does not run the parser, call an external model/provider, retrieve external data, or produce production reporting. Outputs require human review.
+
+### Parser Demo
+
+Run a narrow text factor parser example:
+
+```bash
+python -m carbonops_assistant.cli parse-factor "Diesel combustion factor: 2.68 kgCO2e/litre"
+```
+
+Sample output:
+
+```json
+{
+  "assumptions": [],
+  "confidence_level": "medium",
+  "extracted_text": "2.68 kgCO2e/litre",
+  "factor_unit": "kgCO2e/litre",
+  "factor_value": "2.68",
+  "input_id": "cli-input",
+  "normalized_unit": "kgCO2e/litre",
+  "parser_status": "parsed",
+  "unsupported_reasons": [],
+  "warnings": []
+}
+```
+
+The parser demo supports only narrow simple text snippets. Parser outputs are candidates requiring validation and human review.
+
+### Example Status Summary
+
+Run the sample question status checks:
+
+```bash
+python -m carbonops_assistant.cli run-examples
+```
+
+Sample output:
+
+```json
+{
+  "failed": 0,
+  "failures": [],
+  "passed": 12,
+  "total_cases": 12
+}
+```
+
+### Markdown Summary Example
+
+Reporting results can be rendered as concise Markdown summaries for local review output. The summary includes status, visible warnings, assumptions, review status, and the note: `This is a local deterministic summary and requires human review.`
 
 ## Running Tests
 

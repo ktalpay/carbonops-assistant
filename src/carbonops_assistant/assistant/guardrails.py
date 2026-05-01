@@ -7,6 +7,9 @@ RISKY_CLAIM_TERMS = (
     "compliance certification",
     "production-ready",
     "complete emissions accounting",
+    "complete emissions inventory",
+    "final legal decision",
+    "official use",
 )
 
 
@@ -24,7 +27,7 @@ def is_empty_input(question: str | None) -> bool:
 
 
 def requires_more_context(question: str) -> bool:
-    normalized = " ".join(question.lower().split())
+    normalized = " ".join(question.lower().replace("?", "").replace(".", "").split())
     if not normalized:
         return True
 
