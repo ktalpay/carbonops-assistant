@@ -7,6 +7,7 @@ from collections.abc import Sequence
 from carbonops_assistant.assistant.orchestrator import answer_question
 from carbonops_assistant.assistant.response_contract import AssistantResponse
 from carbonops_assistant.config import PROJECT_NAME, PROJECT_SCOPE, PROJECT_STATUS
+from carbonops_assistant.domain.parser import parse_emission_factor_text
 
 
 def status_message() -> str:
@@ -33,6 +34,11 @@ def format_response(response: AssistantResponse) -> str:
     return json.dumps(payload, indent=2, sort_keys=True)
 
 
+def format_parser_result(raw_text: str) -> str:
+    result = parse_emission_factor_text("cli-input", raw_text)
+    return json.dumps(result.to_dict(), indent=2, sort_keys=True)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="carbonops-assistant",
@@ -45,6 +51,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Run a deterministic local demo question.",
     )
     ask_parser.add_argument("question", help="Question to evaluate locally.")
+
+    parse_factor_parser = subparsers.add_parser(
+        "parse-factor",
+        help="Parse a narrow local emission factor text snippet.",
+    )
+    parse_factor_parser.add_argument("raw_text", help="Text snippet to parse locally.")
     return parser
 
 
@@ -61,6 +73,10 @@ def main(argv: Sequence[str] | None = None) -> None:
     args = build_parser().parse_args(argv)
     if args.command == "ask":
         print(format_response(answer_question(args.question)))
+        return
+
+    if args.command == "parse-factor":
+        print(format_parser_result(args.raw_text))
         return
 
     print(status_message())

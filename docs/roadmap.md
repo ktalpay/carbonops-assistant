@@ -23,6 +23,7 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 - Deterministic orchestrator that combines guardrails and optional knowledge lookups
 - Deterministic local demo command
 - Minimal text factor parser for narrow public-safe snippets
+- Local parser demo command
 
 ## Later increments
 

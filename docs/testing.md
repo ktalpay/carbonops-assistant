@@ -15,6 +15,7 @@ Tests currently cover:
 - package import baseline
 - local CLI status message
 - local CLI demo command statuses
+- local parser demo command statuses
 - response contract behavior
 - deterministic guardrails
 - units and emissions helpers

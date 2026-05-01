@@ -94,6 +94,33 @@ Sample output:
 
 The demo command is a local baseline only. It does not run the parser, call an external model/provider, retrieve external data, or produce production reporting. Outputs require human review.
 
+### Parser Demo
+
+Run a narrow text factor parser example:
+
+```bash
+python -m carbonops_assistant.cli parse-factor "Diesel combustion factor: 2.68 kgCO2e/litre"
+```
+
+Sample output:
+
+```json
+{
+  "assumptions": [],
+  "confidence_level": "medium",
+  "extracted_text": "2.68 kgCO2e/litre",
+  "factor_unit": "kgCO2e/litre",
+  "factor_value": "2.68",
+  "input_id": "cli-input",
+  "normalized_unit": "kgCO2e/litre",
+  "parser_status": "parsed",
+  "unsupported_reasons": [],
+  "warnings": []
+}
+```
+
+The parser demo supports only narrow simple text snippets. Parser outputs are candidates requiring validation and human review.
+
 ## Running Tests
 
 ```bash
