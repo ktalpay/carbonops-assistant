@@ -17,6 +17,7 @@ Tests currently cover:
 - response contract behavior
 - deterministic guardrails
 - units and emissions helpers
+- sample question fixture schema
 - evaluation case loading and deterministic runner behavior
 - knowledge-base document loading and keyword ranking
 - deterministic assistant orchestrator behavior

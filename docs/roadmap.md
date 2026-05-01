@@ -10,6 +10,7 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 - Deterministic emissions calculation helpers
 - Basic unit normalization helpers
 - Sample question fixture
+- Sample question schema validation
 - Unit test baseline
 - Test-only continuous integration
 - Deterministic local evaluation case loader and status-check runner
@@ -19,7 +20,6 @@ This roadmap tracks small, reviewable increments. Planned items are not claims o
 ## Next focus
 
 - Parser input contract
-- Sample question schema validation
 - Source metadata model
 - Reporting result contract
 - Clearer public examples for supported and unsupported questions
